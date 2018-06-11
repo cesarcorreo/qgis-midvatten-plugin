@@ -174,6 +174,10 @@ class DiverofficeImport(PyQt4.QtGui.QMainWindow, import_ui_dialog):
             PyQt4.QtGui.QApplication.restoreOverrideCursor()
             return True
 
+        file_to_import_to_db[0].append(u'comment')
+        [x.append(u'SWECO nivåloggning.') for x in file_to_import_to_db[1:]]
+
+
         importer = import_data_to_db.midv_data_importer()
         answer = importer.general_import(u'w_levels_logger', file_to_import_to_db)
 
